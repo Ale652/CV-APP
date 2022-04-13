@@ -1,0 +1,25 @@
+.nav-button {
+    width: 130px;
+    height: 40px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    text-align: left;
+    padding-top: 10px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;      
+  }
+  
+  .nav-button:hover {
+    background: #f0efef;
+  }
+  
+  .active {
+    background: black;
+    color: white;
+  }

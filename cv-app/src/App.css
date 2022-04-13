@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,100;1,700'); /*https://fonts.google.com/specimen/Poppins */
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+
+:root{ /* The :root CSS pseudo-class matches the root element of a tree representing the document.  */
+  /*colors*/
+  --body-bg-color : #FFFFFF;
+  --sidebar-bg-color : #e2dbdb; /**e2dbdb */
+  --text-color: #333333;
+  --title-color: #111111;
+  --date-color : #1f94c2; /*for the experience professionelle*/
+  /*Dark theme*/
+  --dark-body-bg-color: #242424;
+  --dark-sidebar-bg-color: #171717;
+  --dark-text-color: #d8d8d8;
+  --dark-title-color: #ffffff;
+  --dark-date-color: #e6ef71;
+
+
+  --icon-color: var(--text-color); /* on retake text-color*/
+  --circle-color: #AAA; /*when we will rate our competences*/
+  --circle-color-plain: #555;
+  /*Dark theme*/
+  --dark-icon-color: var(--dark-text-color); /* on retake text-color*/
+  --dark-circle-color: rgb(108,108,108);
+  --dark-circle-color-plain:  rgb(238,238,238);
+
+  /*fonts*/
+  --body-font : 'Poppins', sans-serif;
+  --h1-font-size: 1.7rem;
+  --h2-font-size: 1.3rem;
+  --h3-font-size: 1.1rem;
+  --h4-font-size: 1rem;
+
+
+  /*helpers*/
+   --spacing-1: .4rem;
+   --spacing-2: .8rem;
+   --spacing-3: 1.2rem;
+   --spacing-4: 1.5rem;
+   --spacing-5: 2rem;
+
+}
+
+body{
+  font-family: var(--body-font);  
+  font-weight: 200;
+  color: var(--text-color);
+  background-color: var(--body-bg-color);
+}
+
+.dark{
+  color: var(--dark-text-color);
+  background-color: var(--dark-body-bg-color);
+}
+
+h1, h2, h3 {
+  margin-bottom: var(--spacing-1);
+  font-weight: 400;
+  color: var(--title-color);
+}
+
+.dark h1, .dark h2, .dark h3 {
+  color: var(--dark-title-color);
+}
+
+h1{
+  font-size:var(--h1-font-size);
+  text-transform: uppercase;
+}
+
+h2{
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+  font-size: var(--h2-font-size);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h3{
+  font-size: var(--h3-font-size);
+}
+
+
+button{
+  background-color: transparent; /*it is used for Dark/Light Button*/
+  border: none;
+  cursor: pointer;
+}
+
+.dark button{
+  color: var(--dark-text-color);
+}
+
+a{
+  text-decoration: none; /* it is used for example for Phone and Mail from User Component - then we do not want to appear as link*/
+  color: var(--text-color);
+}
+
+.dark a{
+  color: var(--dark-text-color);
+}
+
+p{
+  margin-bottom: var(--spacing-2); /*it will give some space between the rows of User_Info from component User*/
+}
+
+ul{  /*it is defined for the interests component*/
+  padding-left: 1.3rem;;
+}
+
+li{
+  margin-bottom: var(--spacing-2);
+}
+
+
+.mb3{
+  margin-bottom:var(--spacing-3) ;
+}
+
+.mb5{
+  margin-bottom:var(--spacing-5) ;
+}
+
+.grid__row{
+  margin:var(--spacing-3)
+}
+
+/*grids*/
+/*only on the big display*/
+@media screen  and (min-width:768px){ /*@media rule to include a block of CSS properties only if a certain condition is true.*/
+  .grid__container{
+    display: grid; /*The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.*/
+    grid-template-columns: 1fr 3.5fr; /* CSS property defines the line names and track sizing functions of the grid columns.  */
+  
+  }
+
+  .grid__row{
+    display: grid; /*The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.*/
+    grid-template-columns: 1fr 3.5fr; /* CSS property defines the line names and track sizing functions of the grid columns.  */
+    margin:0;
+  
+  }
+}
+
+/*layout*/
+/*1rem equals the font size of the html element (which for most browsers has a default value of 16px)*/
+/*rem	Relative to font-size of the root element */
+/*Padding is used to create space around an element's content, inside of any defined borders.*/
+.sidebar{
+  position: relative;
+  padding:1.5rem; 
+  background-color: var(--sidebar-bg-color); 
+}
+
+.sidebar::before{
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  content : '';
+  display: block;
+  width: 100%;
+  height: 120px;
+  background-color: #84a8be;
+  /* border-radius: 0 0  50% 50%; https://9elements.github.io/fancy-border-radius/#0.0.98.100--. */
+  /* clip-path: polygon(0 0, 100% 10%, 75% 86%, 25% 86%, 0 100%); */
+
+  /* clip-path: polygon(0 0, 100% 0, 99% 87%, 0% 100%); */
+}
+
+.dark .sidebar{
+  padding:1.5rem;
+  background-color: var(--dark-sidebar-bg-color); 
+}
+
+.actions{
+  position: relative;      /*we will use it to display the pdf and sun/moon buttons*/ /*If I will want to put .sidebar::before*/
+  display: flex;
+  justify-content: space-between;
+}
+
+/*icons*/
+.circle{
+  display: inline-block;;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background-color: var(--circle-color);
+
+}
+
+.dark .circle{
+  background-color: var(--dark-circle-color);
+}
+
+.circle-plain{
+  background-color: var(--circle-color-plain);
+}
+
+
+.dark .circle-plain{
+  background-color: var(--dark-circle-color-plain);
+}
+
+.main{
+  padding:1.5rem;
+}
+
+/*Generate PDF*/
+#cv-print{
+  width: 100% !important;
+}
+
+.cv-print .actions{
+  display: none;
+}
+
+.nav-button-pdf{}
+
+.cv-print ul{
+  margin: 0;
+  padding: 0;
+}
+
+.cv-print ul li{
+  list-style-type: none;
+}
+
+.cv-print ul li:before{
+  content: ".";
+  display: inline-block;
+  font-size: 110%;
+  padding-right: 10px;
+}
+
+.cv-print .grid__container{
+  font-size: 12px !important;
+  max-width: 210mm;
+}
+
+.cv-print .sidebar{
+  height: 297mm;
+}
+
+.cv-print .user__infos svg{
+  display: none !important;
+}
+
+.cv-print .circle{
+  width: 10px;
+  height: 10px;
+}
+
+.cv-print .grid__date{
+  margin-top: 5px;
+}
+
+
+/**/
+/* 
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+.container{
+  background-color: lightgrey;
+  position: absolute;
+  margin: 100px auto;
+  width: 90%;
+  box-shadow: 1px 1px 4px 1px lightgrey;
+}
+
+.container form{
+  width: 100%;
+  padding: 10px;
+}
+
+.container label{
+  display: block;
+  letter-spacing: 0.1rem;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+
+.container input,
+.container textarea{
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  border: none;
+  box-shadow: 1px 1px 4px 1px #e2dbdb;
+}
+
+.container input:focus,
+.container textarea:focus{
+  box-shadow: 1px 1px 4px 1px rgb(49, 170, 240);
+}
+
+.singleItem{
+  margin:10px 0; 
+}
+
+.btn{
+  width: 100%;
+  text-align: center;
+}
+
+.btn button{
+  width: 150px;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  outline: none;
+  transition:cubic-bezier(0.6, 0.04, 0.98, 0.335)all 0.5s ease-in-out;
+  position: relative;
+  margin-top: 5px;
+}
+
+.btn button:hover{
+  border: 1px solid #fefefe;
+  background-color: rgb(199, 202, 199);
+  cursor: pointer;
+}
+
+.msg{
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  letter-spacing: 0.2rem;
+  font-style: italic;
+  width: 340px;
+  padding: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(5, 110, 5);
+  background-color: #fff;
+  border-radius: 5px;
+  
+}
+
+.msgAppear{
+  display: none;
+}
+
+@media screen and (min-width:664px){
+  .container{
+    width: 60%;
+  }
+  
+}
+
+@media screen and (min-width:986px){
+  .container{
+    width: 40%;
+  }
+  
+}

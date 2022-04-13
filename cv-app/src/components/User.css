@@ -1,0 +1,23 @@
+.user {
+    position: relative;
+    text-align: center;
+}
+
+.user__avatar{
+    border-radius: 50%;  /* define the form for the picture*/
+}
+
+.user__infos{
+    text-align: left;
+    padding: var(--spacing-3) 0 var(--spacing-1) 0;
+}
+
+.user__info{
+    display: flex;
+}
+
+.user__info svg{  /* it will put some space between the user info data and its associated icons that we have imported from @mui/icons-material*/
+    color:varr(--icon-color);
+    margin-right: 1rem;
+}
+

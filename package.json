@@ -1,0 +1,33 @@
+{
+  "name": "cv-app7",
+  "version": "1.0.0",
+  "description": "form",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix cv-app",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "alex",
+  "license": "ISC",
+  "dependencies": {
+    "@hookform/resolvers": "^2.8.8",
+    "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
+    "nodemailer": "^6.7.2",
+    "react-hook-form": "^7.25.3",
+    "react-input-component": "^0.2.0",
+    "source-map-loader": "^3.0.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "express-pino-logger": "^7.0.0",
+    "node-env-run": "^4.0.2",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "pino-colada": "^2.2.2"
+  }
+}
